@@ -8,7 +8,7 @@ with open("README.md", "r") as fh:
 setuptools.setup(
     name='ravand_plotting',
 
-    version='1.1.0',
+    version='1.0.0',
 
     description='Plotting package for Backtrader (Bokeh)',
 
