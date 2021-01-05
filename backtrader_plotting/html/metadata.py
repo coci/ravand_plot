@@ -105,14 +105,14 @@ def _get_extra(extra_info):
 def get_metadata_div(extra_info ,strategy: bt.Strategy) -> str:
     md = ""
 
-    md += _get_strategy(strategy)
-    md += '* * *'
-    md += _get_datas(strategy)
-    md += '* * *'
-    md += _get_observers(strategy)
-    md += '* * *'
-    md += _get_analyzers(strategy)
-    md += '* * *'
+    # md += _get_strategy(strategy)
+    # md += '* * *'
+    # md += _get_datas(strategy)
+    # md += '* * *'
+    # md += _get_observers(strategy)
+    # md += '* * *'
+    # md += _get_analyzers(strategy)
+    # md += '* * *'
 
     if extra_info:
         md += _get_extra(extra_info)

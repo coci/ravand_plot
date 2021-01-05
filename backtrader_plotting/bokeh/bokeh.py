@@ -337,13 +337,13 @@ class Bokeh(metaclass=bt.MetaParams):
 
     def generate_model_tabs(self, fp: FigurePage, tradingdomain=None) -> List[Panel]:
         observers = [x for x in fp.figure_envs if isinstance(x.master, bt.Observer)]
-        datas = [x for x in fp.figure_envs if isinstance(x.master, bt.DataBase)]
+        # datas = [x for x in fp.figure_envs if isinstance(x.master, bt.DataBase)]
         inds = [x for x in fp.figure_envs if isinstance(x.master, bt.Indicator)]
 
         # now assign figures to tabs
         # 1. assign default tabs if no manual tab is assigned
-        for figure in [x for x in datas if x.plottab is None]:
-            figure.plottab = 'Plots' if self.is_tabs_single else 'Datas'
+        # for figure in [x for x in datas if x.plottab is None]:
+        #     figure.plottab = 'Plots' if self.is_tabs_single else 'Datas'
 
         for figure in [x for x in inds if x.plottab is None]:
             figure.plottab = 'Plots' if self.is_tabs_single else 'Indicators'
@@ -353,7 +353,7 @@ class Bokeh(metaclass=bt.MetaParams):
 
         # 2. group panels by desired tabs
         # groupby expects the groups to be sorted or else will produce duplicated groups
-        sorted_figs = list(itertools.chain(datas, inds, observers))
+        sorted_figs = list(itertools.chain(inds, observers))
 
         # 3. filter tradingdomains
         if tradingdomain is not None:
